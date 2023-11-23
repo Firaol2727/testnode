@@ -8,13 +8,21 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server:
+  testnode:
     build:
-      context: .
+      context: "."
+      dockerfile: "./Dockerfile"
     environment:
       NODE_ENV: development
     ports:
       - 2007:2007
+    # networks:
+    #   host:
+    #     external:true
+    #     name:host
+    # volumes:
+    #   - test_node_volume:uploads
+    # container_name: testnode
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
@@ -26,26 +34,26 @@ services:
 #       db:
 #         condition: service_healthy
 #   db:
-#     image: postgres
+#     image: mysql
 #     restart: always
-#     user: postgres
-#     secrets:
-#       - db-password
 #     volumes:
-#       - db-data:/var/lib/postgresql/data
+#       - db-data:/var/lib/mysql
 #     environment:
-#       - POSTGRES_DB=example
-#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+#       - MYSQL_DB=testnode
+#       - MYSQL_ROOT_PASSWORD=root
 #     expose:
-#       - 5432
+#       - 3306
 #     healthcheck:
-#       test: [ "CMD", "pg_isready" ]
+#       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
 #       interval: 10s
 #       timeout: 5s
 #       retries: 5
 # volumes:
-#   db-data:
+#   - test_node_volume:uploads
 # secrets:
 #   db-password:
 #     file: db/password.txt
+# networks:
+#   host:
+#     driver:null
 

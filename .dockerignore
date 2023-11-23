@@ -3,7 +3,7 @@
 #
 # For more help, visit the .dockerignore file reference guide at
 # https://docs.docker.com/engine/reference/builder/#dockerignore-file
-
+node_modules
 **/.classpath
 **/.dockerignore
 **/.env
@@ -23,7 +23,6 @@
 **/docker-compose*
 **/compose*
 **/Dockerfile*
-**/node_modules
 **/npm-debug.log
 **/obj
 **/secrets.dev.yaml
