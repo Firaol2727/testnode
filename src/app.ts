@@ -3,26 +3,26 @@ const app = express();
 // database connections
 import mysql from "mysql2";
 // Create a connection pool
-const pool = mysql.createPool({
-  host: "",
-  user: "admin",
-  password: '',
-  database: "lersha_dev",
-  port:3306
-});
+// const pool = mysql.createPool({
+//   host: "",
+//   user: "admin",
+//   password: '',
+//   database: "lersha_dev",
+//   port:3306
+// });
 
 // Check the database connection
-pool.getConnection((err, connection) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
+// pool.getConnection((err, connection) => {
+//   if (err) {
+//     console.error('Error connecting to the database:', err);
+//     return;
+//   }
 
-  console.log('Connected to the database!');
+//   console.log('Connected to the database!');
   
-  // Release the connection
-  connection.release();
-});
+//   // Release the connection
+//   connection.release();
+// });
 let query=""
 // Close the connection pool after 5 seconds
 
