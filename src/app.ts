@@ -28,7 +28,7 @@ let query=""
 
 // routes
 app.get('/', (req: Request, res: Response) => {
-  res.send('<div style=""> <h1> HELLO FIRAOL WELL </br> CHANGE  MADE </br> COME TO THE TEST NODE </h1></div>');
+  res.send('<div style=""> <h1> HELLO FIRAOL WELL </br> CHANGES  MADE </br> COME TO THE TEST NODE </h1></div>');
 });
 
 // some more stuff
